@@ -1,0 +1,65 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      
+    - name: Install dependencies
+      run: make bootstrap
+      
+    - name: Run tests and CI build
+      run: ./gradlew test
+  
+  acceptance-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: make bootstrap
+      
+    - name: Run acceptance tests
+      run: ./gradlew cucumberCli
+
+    - name: Make output dir
+      if: ${{ always() }}
+      run: mkdir -p ./output
+
+    - name: Copy images to output dir
+      if: ${{ always() }}
+      run: cp -R src/test/resources/images output
+
+    - name: Cache test output
+      if: ${{ always() }}
+      uses: actions/cache@v3
+      with:
+        path: ./output
+        key: test-output-dir-${{ github.sha }}
+  
+  publish-tests:
+    needs: acceptance-test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Fetch cache test output
+      uses: actions/cache@v3
+      with:
+        path: ./output
+        key: test-output-dir-${{ github.sha }}
+
+    - name: Publish Tests
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output
