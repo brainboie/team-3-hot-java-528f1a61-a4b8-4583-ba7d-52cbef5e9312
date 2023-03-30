@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import com.levelup.forestsandmonsters.*;
 
+import java.awt.Point;
+
 public class GameMapSteps {
     @Test
     public void initializationNumberOfPositions() {
@@ -30,7 +32,11 @@ public class GameMapSteps {
         GameMap GM = new GameMap();
         assertEquals(GM.numPositions, GM.getTotalPositions());
     }
-    
+    @Test
+    public void VerifyInvalidPositionIsInvalid() {
+        GameMap GM = new GameMap();
+        assertEquals(false, GM.isPositionValid(new Point(11, 11)));
+    }
 }
 
 
