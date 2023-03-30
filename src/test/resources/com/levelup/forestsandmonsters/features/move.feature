@@ -30,4 +30,4 @@ Feature: Move in a direction
             | 9 | 0 | NORTH | 0 | 9 | 1 | 1 |
             | 9 | 0 | SOUTH | 0 | 9 | 0 | 1 |
             | 9 | 0 | EAST | 0 | 9 | 0 | 1 |
-            | 9 | 0 | WEST | 0 | 8 | 0 | 1 |
+            | 9 | 0 | WEST | 0 | 8 | 0 | 1 |  
