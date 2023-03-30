@@ -13,13 +13,20 @@ public class GameMapSteps {
         assertEquals(100, GM.numPositions);
     }
     @Test
-    public void initislizaeStartingPosition () 
+    public void initilizeStartingPosition () 
     {
         GameMap GM=new GameMap ();
         assertEquals(0, GM.startingPosition.coordinates.x);
         assertEquals(0, GM.startingPosition.coordinates.y);
     }
+    @Test
+    public void GetPositionsAreProperSize() {
+        GameMap GM=new GameMap();
+        // Crude attempt to demonstrate total length of multi-dimensional array
+        assertEquals(GM.numPositions, (GM.positions.length * GM.positions[0].length));
+    }
 }
+
 
 
 
