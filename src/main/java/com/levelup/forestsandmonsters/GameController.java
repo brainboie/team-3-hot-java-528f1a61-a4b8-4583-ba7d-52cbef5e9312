@@ -6,6 +6,7 @@ public class GameController {
 
     static final String DEFAULT_CHARACTER_NAME = "Character";
     Character character;
+    GameMap map;
 
     public class GameStatus {
         // TODO: Add other status data
@@ -34,9 +35,11 @@ public class GameController {
     }
 
     public void startGame() {
-        // TODO: Implement startGame - Should probably create tiles and put the character
-        // on them?
-        // TODO: Should also update the game results?
+        map = new GameMap();
+        character.enterMap(map);
+        status.characterName = character.getName();
+        status.currentPosition = character.getPosition();
+        status.moveCount = 0;
     }
 
     public GameStatus getStatus() {
