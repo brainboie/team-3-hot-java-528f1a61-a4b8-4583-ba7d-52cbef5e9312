@@ -6,11 +6,11 @@ Feature: Create a GameStaus
     Scenario Outline: create a GameStatus
         Given the gameStatus is initialized with x coordinate <currXInput>
         And the gameStatus is initialized with y coordinate <currYInput>
-        And the gameStatus is initialized with  name <charNameInput>
+        And the gameStatus is initialized with name <charNameInput>
         When the gameStatus is instantiated
         Then the gameStatus is created with x coordinate <currXOutput>
         And the gameStatus is created with y coordinate <currYOutput>
-        And the gameStatus is created with y coordinate <charNameOutput>
+        And the gameStatus is created with name <charNameOutput>
 
         Examples:
             | currXInput | currYInput | charNameInput | currXOutput | currYOutput | charNameOutput |
