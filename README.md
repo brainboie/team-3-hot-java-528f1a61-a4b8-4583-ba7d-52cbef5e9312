@@ -12,3 +12,4 @@ To run, 'make build', then 'make run'. LevelUpMain contains the main method for 
 
 
 
+Please refer /config/workspace/src/test/resources/com/levelup/forestsandmonsters/features/move.feature for move feature behaviour and test cases.
