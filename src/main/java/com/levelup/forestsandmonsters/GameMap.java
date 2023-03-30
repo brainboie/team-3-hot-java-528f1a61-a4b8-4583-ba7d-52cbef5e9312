@@ -12,4 +12,8 @@ public class GameMap {
             }
         }
     }
+
+    public int getTotalPositions() {
+        return (this.positions.length * this.positions[0].length);
+    }
 }
