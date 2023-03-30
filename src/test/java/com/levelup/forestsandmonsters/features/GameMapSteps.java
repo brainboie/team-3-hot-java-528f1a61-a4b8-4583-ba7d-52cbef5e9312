@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.levelup.forestsandmonsters.*;
+import com.levelup.forestsandmonsters.GameController.DIRECTION;
 
 import java.awt.Point;
 
@@ -36,6 +37,27 @@ public class GameMapSteps {
     public void VerifyInvalidPositionIsInvalid() {
         GameMap GM = new GameMap();
         assertEquals(false, GM.isPositionValid(new Point(11, 11)));
+        assertEquals(false, GM.isPositionValid(new Point(0, -1)));
+    }
+    @Test
+    public void isCalculatedPositionValid() {
+        GameMap GM = new GameMap();
+        // Test moves from 0,0 to 1,0
+        assertNotEquals(GM.startingPosition.coordinates.y, GM.calculatePosition(GM.startingPosition, DIRECTION.SOUTH).coordinates.y);
+        // Test moves from 0,0 to 0,0
+        assertEquals(GM.startingPosition.coordinates.y, GM.calculatePosition(GM.startingPosition, DIRECTION.NORTH).coordinates.y);
+        // Test moves from 0,0 to 0,1
+        assertNotEquals(GM.startingPosition.coordinates.x, GM.calculatePosition(GM.startingPosition, DIRECTION.EAST).coordinates.x);
+        // Test moves from 0,0 to 0,0
+        assertEquals(GM.startingPosition.coordinates.x, GM.calculatePosition(GM.startingPosition, DIRECTION.WEST).coordinates.x);
+    }
+    @Test
+    public void isCalculatedPositionInvalid() {
+        GameMap GM = new GameMap();
+        // Test moves from 0,0 to -1,0 and is reset to 0,0
+        assertEquals(GM.startingPosition.coordinates.y, GM.calculatePosition(GM.startingPosition, DIRECTION.NORTH).coordinates.y);
+        // Test moves from 0,0 to 0,-1 and is reset to 0,0
+        assertEquals(GM.startingPosition.coordinates.x, GM.calculatePosition(GM.startingPosition, DIRECTION.WEST).coordinates.x);
     }
 }
 
