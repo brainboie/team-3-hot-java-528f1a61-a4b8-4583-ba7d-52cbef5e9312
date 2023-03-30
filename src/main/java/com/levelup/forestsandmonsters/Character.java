@@ -26,6 +26,7 @@ public class Character {
 
     public void enterMap(GameMap map) {
         this.map = map;
+        this.position = map.startingPosition;
     }
 
     public String getName() {
@@ -47,7 +48,8 @@ public class Character {
             position = newPosition;
         }
         */
-        // TODO
+        // TODO: this return fake position of (1,1)
+        position = new Position(1,1);
     }
 
     public void setMoveCount(int moveCount) {
