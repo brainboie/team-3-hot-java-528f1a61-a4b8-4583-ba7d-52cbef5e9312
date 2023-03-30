@@ -6,15 +6,14 @@ import org.junit.Test;
 
 public class CharacterTest {
     @Test
-    public void initializationCreatesResults() {
+    public void initializationChracaterName() {
         Character testObj = new Character();
         assertNotNull(testObj.name);
     }
 
     @Test
-    public void initializationCreatesWithNameResults() {
+    public void initializationCharacterNameBeLance() {
         Character testObj = new Character("Lance");
-        assertNotNull(testObj.name);
         assertEquals(testObj.name, "Lance");
     }
 
