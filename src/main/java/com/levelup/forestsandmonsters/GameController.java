@@ -26,10 +26,10 @@ public class GameController {
     }
 
     // Pre-implemented to demonstrate ATDD
-    // TODO: Update this if it does not match your design
+    // MODIFIED: Input name will be trimmed on both end if it contains while spaces.
     public void createCharacter(String name) {
-        if (name != null && !name.equals("")) {
-            status.characterName = name;
+        if (name != null && !name.trim().equals("")) {
+            status.characterName = name.trim();
         } else {
             status.characterName = DEFAULT_CHARACTER_NAME;
         }
