@@ -20,7 +20,7 @@ public class GameControllerTest {
         GameMap fakeMap = new GameMap();
 
         fakeCharacter.enterMap(fakeMap);
-        fakeCharacter.move(DIRECTION.NORTH);
+        fakeCharacter.move(DIRECTION.SOUTH);
         fakeCharacter.move(DIRECTION.EAST);
         
         assertEquals(1, fakeCharacter.getPosition().coordinates.x);

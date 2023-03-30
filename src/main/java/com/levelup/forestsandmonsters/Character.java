@@ -42,7 +42,7 @@ public class Character {
     }
 
     public void move(DIRECTION directionToMove) {
-        ///
+        position = map.calculatePosition(position, directionToMove);
     }
 
     public void setMoveCount(int moveCount) {
