@@ -11,5 +11,23 @@ The UI is implemented using springshell in LevelUpGame.java. See https://docs.sp
 To run, 'make build', then 'make run'. LevelUpMain contains the main method for the application. LevelUpGame contains the commands and routing. GameController is the domaincontroller.
 
 
+## Our Team
+We are Hot Java!
+![Alt text](src/test/resources/images/hotjava.jpg?raw=true "Hot Java!")
+- Ashish
+- Brandon
+- Rani
+- Sean
+- Seongyong
+- Scott
+- Todd
+## Testing
 
-Please refer /config/workspace/src/test/resources/com/levelup/forestsandmonsters/features/move.feature for move feature behaviour and test cases.
+
+### Acceptance Testing
+Acceptance tests performed using cucumber.
+They are located in src/test/java/com/levelup/forestsandmonsters/features
+
+### Unit Testing
+Unit tests are performed using JUnit.
+They are located in src/test/java/com/levelup/forestsandmonsters
