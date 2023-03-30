@@ -18,15 +18,6 @@ public class CharacterTest {
         assertEquals(testObj.name, "Lance");
     }
 
-    /**@Test
-    public void enterMap(GameMap map){
-        Character testChar = new Character("Lance");
-        testChar.enterMap(map);
-        assertNotNull(testChar.map);
-        assertEquals(testChar.map, map);
-    }
-    */
-
 }
 
 

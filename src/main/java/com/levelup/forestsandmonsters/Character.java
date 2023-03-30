@@ -1,16 +1,20 @@
 package com.levelup.forestsandmonsters;
 
 public class Character {
-    static final String DEFAULT_NAME = "Character";
+    static final String DEFAULT_CHARACTER_NAME = "Character";
 
     public String name;
 
     public Character() {
-        name = DEFAULT_NAME;
+        name = DEFAULT_CHARACTER_NAME;
     }
 
     public Character(String name) {
-        this.name = name;
+        if (name != null && !name.trim().equals("")) {
+            this.name = name.trim();
+        } else {
+            this.name = DEFAULT_CHARACTER_NAME;
+        }
     }
 
 }

@@ -5,6 +5,7 @@ import java.awt.Point;
 public class GameController {
 
     static final String DEFAULT_CHARACTER_NAME = "Character";
+    Character character;
 
     public class GameStatus {
         // TODO: Add other status data
@@ -26,13 +27,10 @@ public class GameController {
     }
 
     // Pre-implemented to demonstrate ATDD
-    // MODIFIED: Input name will be trimmed on both end if it contains while spaces.
+    // MODIFIED2: delegate to Chracter class
+    // MODIFIED1: Input name will be trimmed on both end if it contains while spaces.
     public void createCharacter(String name) {
-        if (name != null && !name.trim().equals("")) {
-            status.characterName = name.trim();
-        } else {
-            status.characterName = DEFAULT_CHARACTER_NAME;
-        }
+        this.character = new Character(name);
     }
 
     public void startGame() {
