@@ -42,14 +42,7 @@ public class Character {
     }
 
     public void move(DIRECTION directionToMove) {
-        /** 
-        Position newPosition = map.calcuratePosition(this.position, directionToMove);
-        if isPositionValid(newPosition.coordinates) {
-            position = newPosition;
-        }
-        */
-        // TODO: this return fake position of (1,1)
-        position = new Position(1,1);
+        ///
     }
 
     public void setMoveCount(int moveCount) {
