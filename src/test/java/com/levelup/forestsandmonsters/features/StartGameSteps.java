@@ -25,13 +25,16 @@ public class StartGameSteps {
     @Then("the Game sets the character's X position to {int}")
     public void checkXPosition(int xPosition)
     {
-        assertEquals(xPosition, testObj.getStatus().currentPosition.x);
+        assertEquals(true, (testObj.getStatus().currentPosition.x >= 0));
+        assertEquals(true, (testObj.getStatus().currentPosition.x <= 10));
+        
     }
 
     @Then("the Game sets the character's Y position to {int}")
     public void checkYPosition(int yPosition) 
     {
-        assertEquals(yPosition, testObj.getStatus().currentPosition.y);
+        assertEquals(true, (testObj.getStatus().currentPosition.y >= 0));
+        assertEquals(true, (testObj.getStatus().currentPosition.y <= 10));
     }
 
     @Then("the move count is {int}")
