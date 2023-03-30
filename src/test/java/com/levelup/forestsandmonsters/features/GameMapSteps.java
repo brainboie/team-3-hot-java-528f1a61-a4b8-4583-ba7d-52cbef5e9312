@@ -12,21 +12,13 @@ public class GameMapSteps {
         GameMap GM=new GameMap();
         assertEquals(100, GM.numPositions);
     }
-/* 
     @Test
-    public void initializationStartingPosition() {
-        
+    public void initislizaeStartingPosition () 
+    {
+        GameMap GM=new GameMap ();
+        assertEquals(0, GM.startingPosition.coordinates.x);
+        assertEquals(0, GM.startingPosition.coordinates.y);
     }
-
-    /**@Test
-    public void enterMap(GameMap map){
-        Character testChar = new Character("Lance");
-        testChar.enterMap(map);
-        assertNotNull(testChar.map);
-        assertEquals(testChar.map, map);
-    }
-    */
-
 }
 
 
