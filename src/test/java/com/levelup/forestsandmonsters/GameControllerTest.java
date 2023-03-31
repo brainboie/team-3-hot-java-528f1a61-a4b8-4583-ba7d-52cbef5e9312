@@ -16,17 +16,16 @@ public class GameControllerTest {
 
     @Test
     public void testFakeCharacterEnteringFakeMap() {
-        Character fakeCharacter = new Character("George Dragon");
-        GameMap fakeMap = new GameMap();
-
-        fakeCharacter.enterMap(fakeMap);
-        fakeCharacter.move(DIRECTION.SOUTH);
-        fakeCharacter.move(DIRECTION.EAST);
+        GameController gameController = new GameController();
+        gameController.createCharacter("George Dragon");
+        gameController.startGame();
         
-        assertEquals(1, fakeCharacter.getPosition().coordinates.x);
-        assertEquals(1, fakeCharacter.getPosition().coordinates.y);
+        gameController.move(DIRECTION.SOUTH);
+        gameController.move(DIRECTION.EAST);
         
-        
+        GameController.GameStatus status = gameController.getStatus();
+        assertEquals(1, status.currentPosition.x);
+        assertEquals(1, status.currentPosition.y);
     }
 
 }

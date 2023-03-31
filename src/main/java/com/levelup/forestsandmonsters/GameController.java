@@ -50,6 +50,8 @@ public class GameController {
 
     public void move(DIRECTION directionToMove) {
         this.character.move (directionToMove);
+        status.currentPosition = character.getPosition().coordinates;
+        status.moveCount = character.getMoveCount();
     }
 
     public void setCharacterPosition(Point coordinates) {
