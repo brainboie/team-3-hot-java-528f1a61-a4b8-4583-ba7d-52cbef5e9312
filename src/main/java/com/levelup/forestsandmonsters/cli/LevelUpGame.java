@@ -128,6 +128,7 @@ public class LevelUpGame implements Quit.Command {
 
   private void updateStatus(GameStatus status) {
     GameStatus newStatus = new GameStatus();
+    newStatus.characterName = status.characterName;
     newStatus.currentPosition.x = status.currentPosition.x;
     newStatus.currentPosition.y = status.currentPosition.y;
     
