@@ -24,6 +24,8 @@ public class LevelUpGame implements Quit.Command {
   public final String ANSI_GREEN = "\u001B[32m";
   public final String ANSI_RED = "\u001B[31m";
 
+  private boolean isCharacterCreated = false;
+
   public LevelUpGame() {
     super();
     this.gameController = new GameController();
@@ -35,21 +37,25 @@ public class LevelUpGame implements Quit.Command {
   public void createCharacter(@ShellOption(defaultValue = "Character") String characterName) {
     gameController.createCharacter(characterName);
     GameStatus status = gameController.getStatus();
-
     System.out.println("Your character, " + status.characterName + " is created!");
+    this.isCharacterCreated = true;
   }
 
   @ShellMethodAvailability("notStartedCheck")
   @ShellMethod("Start the game")
   public void startGame() {
-    isGameStarted = true;
-    gameController.startGame();
-    // TODO: Update this prompt. Also, do you want to get the game status and tell
-    // the character where their character is?
-    System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
-    this.drawMap();
-    System.out.println(gameController.getStatus().characterName + " has entered the world at " + gameController.getStatus().currentPosition.x + "," + gameController.getStatus().currentPosition.y + ".");
-    System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Quit(Q)?");
+    if(this.isCharacterCreated) {
+      isGameStarted = true;
+      gameController.startGame();
+      // TODO: Update this prompt. Also, do you want to get the game status and tell
+      // the character where their character is?
+      System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
+      this.drawMap();
+      System.out.println(gameController.getStatus().characterName + " has entered the world at " + gameController.getStatus().currentPosition.x + "," + gameController.getStatus().currentPosition.y + ".");
+      System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Quit(Q)?");
+    } else {
+      System.out.println("You must first create your character!");
+    }
   }
 
   public void drawMap() {
