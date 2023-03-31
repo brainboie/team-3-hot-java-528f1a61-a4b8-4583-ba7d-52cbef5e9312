@@ -119,8 +119,8 @@ public class LevelUpGame implements Quit.Command {
 
   private void printSummary() {
     System.out.println("Exiting the mysterious land!");
+    System.out.println(gameController.character.getName() + " started their journey at position 0,0.");
     for (GameStatus status : gameHistory) {
-      // TODO: Override toString on game status to print pretty
       System.out.println(status);
     }
     System.out.println("Final Move Count is " + gameController.character.getMoveCount() + ".");
