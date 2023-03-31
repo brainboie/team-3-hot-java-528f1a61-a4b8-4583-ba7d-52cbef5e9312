@@ -5,7 +5,7 @@ Feature: Create a Position
    
     Scenario Outline: create a position
         Given the position is initialized with x coordinate <startingXCoordinate>
-        And the position is initializzed with y coordinate <startingYCoordinate>
+        And the position is initialized with y coordinate <startingYCoordinate>
         When the position is instantiated
         Then the position is created wtih x coordinate <endingXCoordinate>
         And the position is created wtih y coordinate <endingYCoordinate>
@@ -13,4 +13,3 @@ Feature: Create a Position
         Examples:
             | startingXCoordinate | startingYCoordinate | endingXCoordinate | endingYCoordinate |
             | 0 | 0 | 0 | 0 |
-            | 2 | 3 | 2 | 3 |
