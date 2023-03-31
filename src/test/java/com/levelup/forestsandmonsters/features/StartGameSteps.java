@@ -40,7 +40,7 @@ public class StartGameSteps {
     @Then("the move count is {int}")
     public void checkMoveCount(int moveCount) 
     {
-        assertEquals(moveCount, testObj.getStatus().moveCount);
+        assertEquals(moveCount, testObj.getMoveCount());
     }
 
 }

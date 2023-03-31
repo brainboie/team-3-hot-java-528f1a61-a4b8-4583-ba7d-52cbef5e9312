@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import java.awt.Point;
 
 import com.levelup.forestsandmonsters.GameController;
+import com.levelup.forestsandmonsters.GameStatus;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -41,7 +43,7 @@ public class MoveSteps {
     public void theCharacterMoves() {
         testObj.setCharacterPosition(new Point(this.startX, this.startY));
         testObj.move(this.direction);
-        GameController.GameStatus status = testObj.getStatus();
+        GameStatus status = testObj.getStatus();
         this.currentPosition = status.currentPosition;
     }
 
@@ -59,7 +61,7 @@ public class MoveSteps {
 
     @Then("the new move count is {int}")
     public void checkMoveCount(int endingMoveCount) {
-        assertEquals(endingMoveCount, testObj.getStatus().moveCount);
+        assertEquals(endingMoveCount, testObj.getMoveCount());
     }
 
 }

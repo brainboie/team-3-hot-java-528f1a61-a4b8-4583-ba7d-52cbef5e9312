@@ -23,7 +23,7 @@ public class GameControllerTest {
         gameController.move(DIRECTION.SOUTH);
         gameController.move(DIRECTION.EAST);
         
-        GameController.GameStatus status = gameController.getStatus();
+        GameStatus status = gameController.getStatus();
         assertEquals(1, status.currentPosition.x);
         assertEquals(1, status.currentPosition.y);
     }

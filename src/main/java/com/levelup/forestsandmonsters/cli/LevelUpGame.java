@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.levelup.forestsandmonsters.GameController;
-import com.levelup.forestsandmonsters.GameController.GameStatus;
+import com.levelup.forestsandmonsters.GameStatus;
 
 import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;

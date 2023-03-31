@@ -9,6 +9,7 @@ public class GameController {
     GameMap map;
     GameStatus status;
 
+    /**
     public class GameStatus {
         public String characterName = DEFAULT_CHARACTER_NAME;
         public Point currentPosition = null;
@@ -20,6 +21,7 @@ public class GameController {
             status.moveCount = character.getMoveCount();
         }
     }
+    */
 
     public GameController() {
         this.status = new GameStatus();
@@ -41,7 +43,8 @@ public class GameController {
     public void startGame() {
         map = new GameMap();
         character.enterMap(map);
-        status.statusUpdate();
+        status.characterName = character.getName();
+        status.currentPosition = character.getPosition().coordinates;
     }
 
     public GameStatus getStatus() {
@@ -51,7 +54,6 @@ public class GameController {
     public void move(DIRECTION directionToMove) {
         this.character.move (directionToMove);
         status.currentPosition = character.getPosition().coordinates;
-        status.moveCount = character.getMoveCount();
     }
 
     public void setCharacterPosition(Point coordinates) {
@@ -64,6 +66,10 @@ public class GameController {
 
     public int getTotalPositions() {
         return map.getTotalPositions();
+    }
+
+    public Object getMoveCount() {
+        return character.getMoveCount();
     }
 
 }
