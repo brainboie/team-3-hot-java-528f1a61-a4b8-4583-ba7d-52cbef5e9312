@@ -5,11 +5,11 @@ import java.awt.Point;
 import com.levelup.forestsandmonsters.GameController.DIRECTION;
 
 public class Character {
-    static final String DEFAULT_CHARACTER_NAME = "Character";
+    public static final String DEFAULT_CHARACTER_NAME = "Character";
 
     public String name;
     private GameMap map;
-    private Position position;
+    private Position currentPosition;
     private int moveCount;
 
     public Character() {
@@ -26,7 +26,7 @@ public class Character {
 
     public void enterMap(GameMap map) {
         this.map = map;
-        this.position = map.startingPosition;
+        this.currentPosition = map.startingPosition;
     }
 
     public String getName() {
@@ -34,7 +34,7 @@ public class Character {
     }
 
     public Position getPosition() {
-        return this.position;
+        return this.currentPosition;
     }
 
     public int getMoveCount() {
@@ -42,7 +42,7 @@ public class Character {
     }
 
     public void move(DIRECTION directionToMove) {
-        position = map.calculatePosition(position, directionToMove);
+        currentPosition = map.calculatePosition(currentPosition, directionToMove);
         moveCount++;
     }
 
@@ -51,7 +51,7 @@ public class Character {
     }
 
     public void setCharacterPosition(Point coordinates) {
-        position.coordinates = coordinates;
+        currentPosition.coordinates = coordinates;
     }
 
 }
