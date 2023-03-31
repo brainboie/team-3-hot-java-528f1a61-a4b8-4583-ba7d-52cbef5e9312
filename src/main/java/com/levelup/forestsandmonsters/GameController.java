@@ -61,9 +61,7 @@ public class GameController {
     }
 
     public int getTotalPositions() {
-        // TODO: IMPLEMENT THIS TO GET THE TOTAL POSITIONS FROM THE MAP -- exists to be
-        // testable
-        return -10;
+        return map.getTotalPositions();
     }
 
 }
