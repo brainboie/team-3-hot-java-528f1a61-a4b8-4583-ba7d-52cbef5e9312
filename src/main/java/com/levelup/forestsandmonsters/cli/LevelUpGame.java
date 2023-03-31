@@ -74,7 +74,7 @@ public class LevelUpGame implements Quit.Command {
     updateStatus(gameController.getStatus());
   }
 
-  @ShellMethod(value = "End the game", key = { "X", "x" })
+  @ShellMethod(value = "End the game", key = { "Q", "q" })
   public void endGame() {
     System.out.println("You exit the mysterious world.");
     printSummary();
