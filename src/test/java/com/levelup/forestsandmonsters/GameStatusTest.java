@@ -9,12 +9,12 @@ public class GameStatusTest {
     @Test
     public void initializationCreatesResults() {
         GameStatus testObj = new GameStatus();
-        assertNotNull(testObj.getCharacterName());
+        assertNotNull(testObj.characterName);
     }
     @Test
     public void initializationPos() {
         GameStatus testObj = new GameStatus();
-        assertNotNull(testObj.getCurrentPosition());
+        assertNotNull(testObj.currentPosition);
     }
 
     @Test

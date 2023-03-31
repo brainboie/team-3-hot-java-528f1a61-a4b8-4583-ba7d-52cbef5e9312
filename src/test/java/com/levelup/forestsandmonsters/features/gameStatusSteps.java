@@ -49,7 +49,7 @@ public class gameStatusSteps {
     
     @Then("the gameStatus is created with name {String}")
     public void thenTheGameSetsTheCharactersName(String charNameOutput) {
-        assertEquals(charNameOutput, gameStatus.getCharacterName());
+        assertEquals(charNameOutput, gameStatus.characterName);
     }
 
     
