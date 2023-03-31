@@ -117,7 +117,11 @@ public class LevelUpGame implements Quit.Command {
   }
 
   private void updateStatus(GameStatus status) {
-    this.gameHistory.add(status);
+    GameStatus newStatus = new GameStatus();
+    newStatus.currentPosition.x = status.currentPosition.x;
+    newStatus.currentPosition.y = status.currentPosition.y;
+    
+    this.gameHistory.add(newStatus);
   }
 
   public Availability startedCheck() {
