@@ -45,7 +45,7 @@ public class LevelUpGame implements Quit.Command {
     System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
     this.drawMap();
     System.out.println(gameController.getStatus().characterName + " has entered the world at " + gameController.getStatus().currentPosition.x + "," + gameController.getStatus().currentPosition.y + ".");
-    System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Exit(X)?");
+    System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Quit(Q)?");
   }
 
   public void drawMap() {
@@ -113,7 +113,7 @@ public class LevelUpGame implements Quit.Command {
       // TODO: Override toString on game status to print pretty
       System.out.println(status);
     }
-    // TODO: Print anything else you committed to in your mockup
+    System.out.println("Final Move Count is " + gameController.character.getMoveCount() + ".");
   }
 
   private void updateStatus(GameStatus status) {
