@@ -6,7 +6,7 @@ public class GameStatus {
     public Point currentPosition;
         public  GameStatus(String charName, int currX, int currY ){
         
-        this.characterName  = "charName"; 
+        this.characterName  = charName; 
         currentPosition.x = currX;
         currentPosition.y = currY;
     }
