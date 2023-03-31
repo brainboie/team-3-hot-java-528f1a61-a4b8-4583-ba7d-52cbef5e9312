@@ -37,13 +37,13 @@ public class GameController {
     // MODIFIED1: Input name will be trimmed on both end if it contains while spaces.
     public void createCharacter(String name) {
         this.character = new Character(name);
+        status.characterName = character.getName();
     }
 
     // Create map but not character 
     public void startGame() {
         map = new GameMap();
         character.enterMap(map);
-        status.characterName = character.getName();
         status.currentPosition = character.getPosition().coordinates;
     }
 

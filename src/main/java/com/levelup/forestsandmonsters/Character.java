@@ -27,6 +27,7 @@ public class Character {
     public void enterMap(GameMap map) {
         this.map = map;
         this.currentPosition = map.startingPosition;
+        moveCount = 0;
     }
 
     public String getName() {
