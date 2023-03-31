@@ -22,15 +22,7 @@ public class GameMap {
     }
 
     public boolean isPositionValid(Point positionCoordinates) {
-        for(int height=0; height < 9; height++) {
-            for(int width=0; width < 9; width++) {
-                if (positions[height][width].coordinates.x == positionCoordinates.x
-                    && positions[height][width].coordinates.y == positionCoordinates.y) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return ((positionCoordinates.x >= 0) && (positionCoordinates.x <=9) && (positionCoordinates.y >=0 ) && (positionCoordinates.y <=9));
     }
 
     public Position calculatePosition(Position startingPosition, DIRECTION direction) {
