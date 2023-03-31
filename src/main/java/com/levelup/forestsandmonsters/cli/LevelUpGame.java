@@ -20,6 +20,10 @@ public class LevelUpGame implements Quit.Command {
   private List<GameStatus> gameHistory;
   private boolean isGameStarted = false;
 
+  public final String ANSI_RESET = "\u001B[0m";
+  public final String ANSI_GREEN = "\u001B[32m";
+  public final String ANSI_RED = "\u001B[31m";
+
   public LevelUpGame() {
     super();
     this.gameController = new GameController();
@@ -54,9 +58,9 @@ public class LevelUpGame implements Quit.Command {
         for(int width=0; width <= 9; width++) {
             if(gameController.character.currentPosition.coordinates.y == height
               && gameController.character.currentPosition.coordinates.x == width) {
-              drawMap += "[P]";
+              drawMap += ANSI_RED + "[P]" + ANSI_RESET;
             } else {
-              drawMap += "[ ]";
+              drawMap += ANSI_GREEN + "[ ]" + ANSI_RESET;
             }
         }
       drawMap += "\r\n";
