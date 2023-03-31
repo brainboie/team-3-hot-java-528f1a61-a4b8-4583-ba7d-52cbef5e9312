@@ -19,6 +19,11 @@ public class MoveSteps {
     GameController.DIRECTION direction;
     Point currentPosition;
 
+    public MoveSteps() {
+        testObj.createCharacter("Character");
+        testObj.startGame();
+    }
+
     @Given("the character starts at position with XCoordinates {int}")
     public void givenTheCharacterStartsAtX(int startX) {
         this.startX = startX;

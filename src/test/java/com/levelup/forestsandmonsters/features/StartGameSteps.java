@@ -14,6 +14,7 @@ public class StartGameSteps {
     @When("the game is started")
     public void whenTheCharacterSetsTheirName() {
         testObj = new GameController();
+        testObj.createCharacter("Character");
         testObj.startGame();
     }
 
