@@ -43,6 +43,7 @@ public class LevelUpGame implements Quit.Command {
     // TODO: Update this prompt. Also, do you want to get the game status and tell
     // the character where their character is?
     System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
+    System.out.println(gameController.getStatus().characterName + " has entered the world at " + gameController.getStatus().currentPosition.x + "," + gameController.getStatus().currentPosition.y + ".");
     System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Exit(X)?");
   }
 
@@ -50,6 +51,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveNorth() {
     gameController.move(GameController.DIRECTION.NORTH);
+    System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
 
@@ -57,6 +59,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveSouth() {
     gameController.move(GameController.DIRECTION.SOUTH);
+    System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
 
@@ -64,6 +67,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveEast() {
     gameController.move(GameController.DIRECTION.EAST);
+    System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
 
@@ -71,6 +75,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveWest() {
     gameController.move(GameController.DIRECTION.WEST);
+    System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
 

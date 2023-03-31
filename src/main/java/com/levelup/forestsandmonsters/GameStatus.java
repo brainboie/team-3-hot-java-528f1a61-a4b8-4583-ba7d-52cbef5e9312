@@ -9,14 +9,14 @@ public class GameStatus {
         currentPosition = new Point(currX, currY);
     }
 
-    public  GameStatus(){
-        
+    public  GameStatus() {
         this.characterName  = "test"; 
         currentPosition = new Point(0, 0);
     }
+    
     @Override
     public String toString() {
-        String str = "Character name is " + characterName + " Position = " + currentPosition.toString();
+        String str = characterName + " has moved to " + currentPosition.x + "," + currentPosition.y + ".";
         return str;
     }
 }
