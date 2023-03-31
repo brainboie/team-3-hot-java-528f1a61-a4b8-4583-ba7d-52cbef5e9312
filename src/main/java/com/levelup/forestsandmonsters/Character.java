@@ -9,7 +9,7 @@ public class Character {
 
     public String name;
     private GameMap map;
-    private Position currentPosition;
+    public Position currentPosition;
     private int moveCount;
 
     public Character() {

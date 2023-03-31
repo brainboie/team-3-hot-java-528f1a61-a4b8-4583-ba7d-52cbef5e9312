@@ -43,14 +43,32 @@ public class LevelUpGame implements Quit.Command {
     // TODO: Update this prompt. Also, do you want to get the game status and tell
     // the character where their character is?
     System.out.println("Welcome to Forests and Monsters! You have entered a mysterious place.");
+    this.drawMap();
     System.out.println(gameController.getStatus().characterName + " has entered the world at " + gameController.getStatus().currentPosition.x + "," + gameController.getStatus().currentPosition.y + ".");
     System.out.println("Would you like to go North(N), South(S), East(E), West(W) or Exit(X)?");
+  }
+
+  public void drawMap() {
+    String drawMap = "";
+    for(int height=0; height <= 9; height++) {
+        for(int width=0; width <= 9; width++) {
+            if(gameController.character.currentPosition.coordinates.y == height
+              && gameController.character.currentPosition.coordinates.x == width) {
+              drawMap += "[P]";
+            } else {
+              drawMap += "[ ]";
+            }
+        }
+      drawMap += "\r\n";
+    }
+    System.out.println(drawMap);
   }
 
   @ShellMethod(value = "Move North", key = { "N", "n" }, group = "Move")
   @ShellMethodAvailability("startedCheck")
   public void moveNorth() {
     gameController.move(GameController.DIRECTION.NORTH);
+    this.drawMap();
     System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
@@ -59,6 +77,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveSouth() {
     gameController.move(GameController.DIRECTION.SOUTH);
+    this.drawMap();
     System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
@@ -67,6 +86,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveEast() {
     gameController.move(GameController.DIRECTION.EAST);
+    this.drawMap();
     System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
@@ -75,6 +95,7 @@ public class LevelUpGame implements Quit.Command {
   @ShellMethodAvailability("startedCheck")
   public void moveWest() {
     gameController.move(GameController.DIRECTION.WEST);
+    this.drawMap();
     System.out.println(gameController.getStatus().toString());
     updateStatus(gameController.getStatus());
   }
