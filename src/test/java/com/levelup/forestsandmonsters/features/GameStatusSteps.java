@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 
 public class GameStatusSteps {
 
-    Point  pos;
+    Point pos = new Point();
     String characterName;
     GameStatus gameStatus;
     
@@ -32,19 +32,18 @@ public class GameStatusSteps {
 
     @When("the gameStatus is instantiated")
     public void theGameStatusPositionIsInstantiated() {
-        gameStatus = new GameStatus(characterName, pos.x, pos.y);
-       
+        gameStatus = new GameStatus(this.characterName, pos.x, pos.y);
     }
 
     @Then("the gameStatus is created with x coordinate {int}")
     public void theGameStausPostionIsCreatedWithX(int currXOutput) {
-        assertEquals(currXOutput, pos.x);
+        assertEquals(currXOutput, gameStatus.currentPosition.x);
     }
 
 
     @Then("the gameStatus is created with y coordinate {int}")
     public void theGameStatusPostionIsCreatedWithY(int currYOutput) {
-        assertEquals(currYOutput, pos.y);
+        assertEquals(currYOutput, gameStatus.currentPosition.y);
     }
     
     @Then("the gameStatus is created with name {string}")

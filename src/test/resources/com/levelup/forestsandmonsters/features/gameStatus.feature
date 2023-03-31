@@ -14,5 +14,5 @@ Feature: Create a GameStaus
 
         Examples:
             | currXInput | currYInput | charNameInput | currXOutput | currYOutput | charNameOutput |
-            | 0 | 0 | test1 | 0 | 0 | test1 |
-            | 1 | 1 | test2 | 1 | 1 | test2 |
+            | 0 | 0 | "test1" | 0 | 0 | "test1" |
+            | 1 | 1 | "test2" | 1 | 1 | "test2" |

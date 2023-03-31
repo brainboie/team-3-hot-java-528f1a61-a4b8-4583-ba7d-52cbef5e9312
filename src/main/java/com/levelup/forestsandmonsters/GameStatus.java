@@ -4,11 +4,9 @@ import java.awt.Point;
 public class GameStatus {
     public String characterName;
     public Point currentPosition;
-        public  GameStatus(String charName, int currX, int currY ){
-        
-        this.characterName  = charName; 
-        currentPosition.x = currX;
-        currentPosition.y = currY;
+    public  GameStatus(String charName, int currX, int currY ){
+        this.characterName  = charName;
+        currentPosition = new Point(currX, currY);
     }
 
     public  GameStatus(){
